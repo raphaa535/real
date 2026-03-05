@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>🇪🇸 Real Madrid - Roses Predictor</title>
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Arrière-plan animé -->
+    <div class="background-animated">
+        <div class="crown-left">👑</div>
+        <div class="flag-right">🇪🇸</div>
+        <div class="rose-top">🌹</div>
+        <div class="trophy-left">🏆</div>
+        <div class="blur-rose"></div>
+        <div class="blur-amber"></div>
+    </div>
+
+    <div id="app">
+        <!-- Carte principale -->
+        <div class="main-card animate-fade-in">
+            
+            <!-- En-tête Real Madrid Roses -->
+            <div class="text-center mb-6">
+                <div class="icon-royal">
+                    <i class="fas fa-rose text-4xl text-amber-300"></i>
+                </div>
+                <h1 class="title">⚪ REAL MADRID ⚪</h1>
+                <div class="subtitle">
+                    <span class="text-2xl">🌹</span>
+                    <span class="subtitle-text">MAISON DES ROSES</span>
+                    <span class="text-2xl">🌹</span>
+                </div>
+            </div>
+            
+            <!-- Formulaire de prédiction -->
+            <div class="space-y-4">
+                
+                <!-- Heure de départ -->
+                <div>
+                    <label class="input-label">
+                        <i class="far fa-clock text-amber-600"></i>
+                        <span>🕐 Heure de départ (HH:MM:SS)</span>
+                    </label>
+                    <input type="text" id="heureDepart" placeholder="19:30:00" value="20:30:00">
+                </div>
+                
+                <!-- Champ 1 (Hex) -->
+                <div>
+                    <label class="input-label">
+                        <i class="fas fa-hashtag text-amber-600"></i>
+                        <span>🔢 Champ 1 (Hex - 4 chiffres)</span>
+                    </label>
+                    <input type="text" id="champ1" placeholder="5745" value="5363" maxlength="4" class="uppercase">
+                </div>
+                
+                <!-- Champ 2 (Dec) -->
+                <div>
+                    <label class="input-label">
+                        <i class="fas fa-calculator text-amber-600"></i>
+                        <span>🔢 Champ 2 (Déc - 4 chiffres)</span>
+                    </label>
+                    <input type="text" id="champ2" placeholder="6754" value="3562" maxlength="4">
+                </div>
+                
+                <!-- Boutons -->
+                <div class="button-group">
+                    <button id="roses-calculate" class="btn-rose">
+                        <i class="fas fa-rose mr-1"></i>
+                        Calculer
+                    </button>
+                    
+                    <button id="reset-btn" class="btn-reset">
+                        <i class="fas fa-undo-alt"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Résultat -->
+            <div id="roses-result" class="result-container hidden">
+                <div class="result-badge">
+                    <div class="result-header">
+                        <h3 class="result-title">
+                            <i class="fas fa-crown text-amber-500"></i>
+                            <span>Résultat</span>
+                        </h3>
+                        <span class="result-badge-new">
+                            🌹 NOUVELLE
+                        </span>
+                    </div>
+                    
+                    <div class="result-content">
+                        <div class="result-card">
+                            <p class="result-card-label">⏰ HEURE FINALE</p>
+                            <div class="time-display" id="heureFinale">--:--:--</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Section Historique -->
+            <div class="history-section">
+                <div class="history-header">
+                    <h3 class="history-title">
+                        <i class="fas fa-history text-amber-600"></i>
+                        Historique
+                    </h3>
+                    <button id="clear-history" class="btn-history-clear">
+                        <i class="fas fa-trash-alt mr-1"></i> Effacer
+                    </button>
+                </div>
+                <div id="historyList" class="history-list">
+                    <!-- L'historique sera chargé ici dynamiquement -->
+                </div>
+            </div>
+            
+            <!-- Footer -->
+            <div class="footer">
+                <span>🇪🇸 Hala Madrid - Maison des Roses 🌹</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript principal -->
+    <script src="script.js"></script>
+</body>
+</html>
